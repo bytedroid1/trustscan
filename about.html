@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About TrustScan — Who Builds It and Why</title>
+<meta name="description" content="TrustScan is an independent QR scanner with 21 link-safety checks that run on your device. Who builds it, and what we do not claim.">
+<link rel="canonical" href="https://trustscanqr.com/about.html">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="TrustScan">
+<meta property="og:title" content="About TrustScan — Who Builds It and Why">
+<meta property="og:description" content="An independent QR code scanner with 21 link-safety checks that run on your device. Who builds it, and what we do not claim.">
+<meta property="og:url" content="https://trustscanqr.com/about.html">
+<meta property="og:image" content="https://trustscanqr.com/assets/img/logo96.png">
+<meta property="og:image:width" content="1024">
+<meta property="og:image:height" content="1024">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/img/logo96.png" type="image/png">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; connect-src 'none'; base-uri 'self'; form-action 'none'">
+<link rel="preload" href="assets/fonts/Manrope-ExtraBold.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/Manrope-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/style.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"AboutPage","url":"https://trustscanqr.com/about.html",
+"mainEntity":{"@type":"Organization","name":"TrustScan","url":"https://trustscanqr.com/",
+"email":"info@trustscanqr.com","logo":"https://trustscanqr.com/assets/img/logo96.png",
+"founder":{"@type":"Person","name":"Umaid Ali"},
+"address":{"@type":"PostalAddress","addressLocality":"Tando Adam","addressCountry":"PK"}}}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="/"><img src="assets/img/logo96.png" alt="" width="32" height="32">TrustScan</a>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false"><span></span></button>
+    <nav class="nav" data-open="false">
+      <a href="qr-code-generator.html">QR generator</a>
+      <a href="qr-code-safety.html">Link safety</a>
+      <a href="index.html#faq">FAQ</a>
+      <a href="support.html">Support</a>
+      <a class="btn btn-chrome" href="index.html#get"><svg class="chrome-mark" viewBox="0 0 48 48" width="17" height="17" aria-hidden="true"><path fill="#EA4335" d="M14 6.68A20 20 0 0 1 44 24H34a10 10 0 0 0-15-8.66Z"/><path fill="#FBBC04" d="M44 24a20 20 0 0 1-30 17.32L19 32.66A10 10 0 0 0 34 24Z"/><path fill="#34A853" d="M14 41.32A20 20 0 0 1 14 6.68L19 15.34a10 10 0 0 0 0 17.32Z"/><circle cx="24" cy="24" r="10.5" fill="#fff"/><circle cx="24" cy="24" r="8.6" fill="#4285F4"/></svg>Chrome extension</a>
+      <a class="btn btn-primary" href="index.html#get">Get the app</a>
+    </nav>
+  </div>
+</header>
+<main id="main" tabindex="-1">
+<section class="section">
+  <div class="wrap prose">
+    <span class="eyebrow">About</span>
+    <h1>Who makes TrustScan</h1>
+    <p class="answer">TrustScan is built by Umaid Ali, an independent developer
+      in Pakistan. It is one app and one website, not a portfolio — the QR
+      scanner has been shipping on Google Play since 2026 and the link-safety
+      engine on this site is the same code the app runs on your phone.</p>
+
+    <h2>Why a QR scanner needed building</h2>
+    <p>Most QR scanners open whatever they read. That was fine when QR codes
+      were a novelty on magazine adverts. It stopped being fine when criminals
+      worked out that a printed sticker over a real code on a parking meter is
+      the cheapest phishing campaign ever devised, and that nobody can read a QR
+      code by eye to tell the difference.</p>
+    <p>TrustScan reads the address first and runs twenty structural checks on
+      it — lookalike alphabets, punycode, brand impersonation, obfuscated IP
+      addresses, open redirects, credential-harvesting paths — and shows you
+      what it found before anything opens. All of it runs on the device. No
+      link you scan is sent anywhere to be rated, which means no record of what
+      you point your camera at exists to be leaked or sold.</p>
+
+    <h2>How this site relates to the app</h2>
+    <p>The link checker here is a direct port of the app's safety engine
+      (<code>lib/services/url_safety.dart</code>). The QR generator is a
+      from-scratch encoder that runs in your browser. Neither sends anything to
+      a server, because there is no server — this is a static site, and the
+      claim that nothing is uploaded is verifiable by opening your browser's
+      network tab.</p>
+    <p>That is not a marketing position. A privacy-focused scanner whose website
+      quietly logged every code you generated would be a contradiction worth
+      being angry about.</p>
+
+    <h2>What we get wrong, and what we do not claim</h2>
+    <p>The checks are structural, not a live blocklist. They catch deception
+      built into the shape of an address — which is what the sticker-over-a-poster
+      attack relies on — but they will not know that an ordinary-looking domain
+      was compromised this morning. A reputation lookup would catch that, and
+      would also mean sending every link you scan to a server. We chose not to,
+      and this is the cost of that choice.</p>
+    <p>Hyphenated brand names are reported as a caution rather than a danger,
+      because <code>apple-orchard.com</code> is a real shape. Some false alarms
+      are the price of catching <code>apple-support.com</code>.</p>
+
+    <h2>Contact</h2>
+    <p>Corrections, false positives and missed detections are the most useful
+      mail we get. If a link should have been flagged and was not, send the
+      exact address to
+      <a href="mailto:info@trustscanqr.com">info@trustscanqr.com</a>.</p>
+    <p>TrustScan · Tando Adam, Pakistan ·
+      <a href="mailto:info@trustscanqr.com">info@trustscanqr.com</a></p>
+  </div>
+</section>
+</main>
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="brand" href="index.html"><img src="assets/img/logo96.png" alt="" width="32" height="32">TrustScan</a>
+        <p style="color:var(--muted);margin-top:.8rem;max-width:34ch">A QR code
+          scanner that reads the link before you do.</p>
+      </div>
+      <div>
+        <h2>Popular</h2>
+        <ul>
+          <li><a href="qr-code-generator.html">QR code generator</a></li>
+          <li><a href="wifi-qr-code-generator.html">Wi-Fi QR code</a></li>
+          <li><a href="vcard-qr-code-generator.html">vCard QR code</a></li>
+          <li><a href="google-review-qr-code-generator.html">Google review QR</a></li>
+          <li><a href="bulk-qr-code-generator.html">Bulk QR codes</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Guides</h2>
+        <ul>
+          <li><a href="why-is-my-qr-code-not-scanning.html">QR code not scanning</a></li>
+          <li><a href="qr-code-size-for-printing.html">QR code size for print</a></li>
+          <li><a href="do-qr-codes-expire.html">Do QR codes expire?</a></li>
+          <li><a href="qr-code-sticker-scams.html">QR sticker scams</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>App</h2>
+        <ul>
+          <li><a href="https://play.google.com/store/apps/details?id=com.trustscan.scanner" rel="noopener noreferrer">Google Play</a></li>
+          <li><a href="https://apps.apple.com/app/id6804426564" rel="noopener">App Store</a></li>
+          <li><a href="qr-code-safety.html">Safety checks</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Company</h2>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="support.html">Support</a></li>
+          <li><a href="privacy.html">Privacy</a></li>
+          <li><a href="mailto:info@trustscanqr.com">info@trustscanqr.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-legal">
+      <span>© 2026 TrustScan</span>
+      <span>Google Play is a trademark of Google LLC. App Store is a trademark of Apple Inc. All other trademarks belong to their respective owners.</span>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

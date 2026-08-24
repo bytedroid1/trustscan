@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Free QR Code Generator and Safe QR Scanner App</title>
+<meta name="description" content="Free QR code generator — make codes for a website, Wi-Fi, vCard or WhatsApp and download PNG or SVG. Plus a QR scanner that checks links for scams.">
+<link rel="canonical" href="https://trustscanqr.com/">
+<meta name="robots" content="index, follow, max-image-preview:large">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="TrustScan">
+<meta property="og:title" content="Free QR Code Generator &amp; Safe QR Code Scanner">
+<meta property="og:description" content="Create QR codes in your browser — nothing is uploaded. And scan QR codes with 21 link-safety checks that run before the page opens.">
+<meta property="og:url" content="https://trustscanqr.com/">
+<meta property="og:image" content="https://trustscanqr.com/assets/img/logo96.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="assets/img/logo96.png" type="image/png">
+<link rel="apple-touch-icon" href="assets/img/logo96.png">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; connect-src 'none'; base-uri 'self'; form-action 'none';">
+<link rel="preload" href="assets/fonts/Manrope-ExtraBold.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/Manrope-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/style.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://trustscanqr.com/#org",
+      "name": "TrustScan",
+      "url": "https://trustscanqr.com/",
+      "logo": "https://trustscanqr.com/assets/img/logo96.png",
+      "email": "info@trustscanqr.com"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://trustscanqr.com/#site",
+      "url": "https://trustscanqr.com/",
+      "name": "TrustScan",
+      "publisher": { "@id": "https://trustscanqr.com/#org" }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "TrustScan: QR Code Scanner",
+      "operatingSystem": "Android, iOS",
+      "applicationCategory": "UtilitiesApplication",
+      "url": "https://trustscanqr.com/",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "description": "QR code scanner and barcode reader that checks every scanned link against 21 safety checks before it opens."
+    },
+    {
+      "@type": "WebApplication",
+      "name": "TrustScan QR Code Generator",
+      "url": "https://trustscanqr.com/qr-code-generator.html",
+      "applicationCategory": "DesignApplication",
+      "browserRequirements": "Requires JavaScript",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="/"><img src="assets/img/logo96.png" alt="" width="32" height="32">TrustScan</a>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false"><span></span></button>
+    <nav class="nav" data-open="false">
+      <a href="qr-code-generator.html">QR generator</a>
+      <a href="qr-code-safety.html">Link safety</a>
+      <a href="#faq">FAQ</a>
+      <a href="support.html">Support</a>
+      <a class="btn btn-chrome" href="#get"><svg class="chrome-mark" viewBox="0 0 48 48" width="17" height="17" aria-hidden="true"><path fill="#EA4335" d="M14 6.68A20 20 0 0 1 44 24H34a10 10 0 0 0-15-8.66Z"/><path fill="#FBBC04" d="M44 24a20 20 0 0 1-30 17.32L19 32.66A10 10 0 0 0 34 24Z"/><path fill="#34A853" d="M14 41.32A20 20 0 0 1 14 6.68L19 15.34a10 10 0 0 0 0 17.32Z"/><circle cx="24" cy="24" r="10.5" fill="#fff"/><circle cx="24" cy="24" r="8.6" fill="#4285F4"/></svg>Chrome extension</a>
+      <a class="btn btn-primary" href="#get">Get the app</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main" tabindex="-1">
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">QR scanner · QR generator · link safety</span>
+      <h1>Scan a QR code.<br>Know where it <span>actually</span> goes.</h1>
+      <p class="lede">A QR code is just a picture of a link. TrustScan reads it,
+        runs 21 checks on the address, and tells you what it found — before the
+        page opens. Free QR code generator included, right here in your browser.</p>
+
+      <div class="stores" id="get">
+        <a class="store store-play" href="https://play.google.com/store/apps/details?id=com.trustscan.scanner" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#00D3FF" d="M3.61 2.30a1.5 1.5 0 0 0-.35.99v17.42c0 .38.13.72.35.99l.06.06L13.4 12v-.23L3.67 2.24z"/><path fill="#FFCE00" d="M16.66 15.29L13.4 12.03v-.23l3.26-3.26.07.04 3.86 2.19c1.1.63 1.1 1.65 0 2.28l-3.86 2.19z"/><path fill="#FF3A44" d="M16.73 15.25L13.4 11.92 3.61 21.70c.36.39.96.43 1.64.05z"/><path fill="#00F076" d="M16.73 8.59L5.25 2.09c-.68-.39-1.28-.34-1.64.05l9.79 9.78z"/></svg>
+          <span><small>Get it on</small><b>Google Play</b></span>
+        </a>
+        <a class="store store-apple" href="https://apps.apple.com/app/id6804426564" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.4 12.7c0-2.2 1.8-3.3 1.9-3.4-1-1.5-2.6-1.7-3.2-1.7-1.4-.1-2.7.8-3.3.8-.7 0-1.7-.8-2.8-.8-1.5 0-2.8.8-3.5 2.1-1.5 2.6-.4 6.5 1.1 8.6.7 1 1.6 2.2 2.7 2.2 1.1 0 1.5-.7 2.8-.7s1.6.7 2.8.7 1.9-1 2.6-2a9 9 0 0 0 1.2-2.4c-.1 0-2.3-.9-2.3-3.4ZM14.2 5.9c.6-.7 1-1.7.9-2.7-.9 0-2 .6-2.6 1.3-.6.6-1.1 1.7-1 2.6 1 .1 2-.5 2.7-1.2Z"/></svg>
+          <span><small>Get it on</small><b>App Store</b></span>
+        </a>
+      </div>
+      <p class="hero-note">Free forever · No account · Works offline · Android and iOS</p>
+    </div>
+
+    <div class="frame">
+      <span class="frame-b1"></span><span class="frame-b2"></span>
+      <div class="checker">
+        <label for="check-url">Try a link check</label>
+        <div class="checker-row">
+          <input id="check-url" type="text" spellcheck="false" autocomplete="off"
+            placeholder="paste any link" value="https://paypal-billing.com/verify">
+        </div>
+        <div class="samples">
+          <button type="button" data-sample="https://trustscanqr.com">safe site</button>
+          <button type="button" data-sample="https://p%D0%B0ypal.com/signin">lookalike domain</button>
+          <button type="button" data-sample="http://192.168.1.1/admin">raw IP</button>
+          <button type="button" data-sample="https://bit.ly/3xamPle">shortener</button>
+          <button type="button" data-sample="https://files.example.com/setup.exe">file download</button>
+        </div>
+        <div class="verdict" id="check-out" data-level="" role="status" aria-live="polite" aria-atomic="true"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="wrap">
+    <span class="eyebrow">Free QR code generator</span>
+    <h2>Make a QR code without handing over your data</h2>
+    <p class="lede">Most online QR code generators log what you create, and some
+      quietly route your code through their own redirect so they can switch the
+      destination later. This one runs entirely in your browser. Close the tab
+      and there is nothing left to log.</p>
+
+    <div class="grid grid-3" style="margin-top:2rem">
+      <div class="card">
+        <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3h7v7H3zM14 3h7v7h-7zM3 14h7v7H3zM14 14h3v3h-3zM18 18h3v3h-3z"/></svg></div>
+        <h3>Every code type</h3>
+        <p>Website links, plain text, Wi-Fi logins, vCard business cards, email,
+          SMS, phone, WhatsApp, location and calendar events.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0-4-4m4 4 4-4M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg></div>
+        <h3>PNG and SVG</h3>
+        <p>Download a high-resolution PNG for screens, or an SVG that stays sharp
+          on a banner, a menu or a shop window at any size.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3 4 6v6c0 4.5 3.4 8.3 8 9 4.6-.7 8-4.5 8-9V6l-8-3Z"/><path d="m9 12 2 2 4-4"/></svg></div>
+        <h3>Static and permanent</h3>
+        <p>Your code holds the real destination, not a tracking redirect. It cannot
+          expire, be repointed, or stop working because a service shut down.</p>
+      </div>
+    </div>
+    <p style="margin-top:2rem"><a class="btn btn-primary btn-lg" href="qr-code-generator.html">Create a QR code</a></p>
+  </div>
+</section>
+
+<section class="section section-alt" id="types">
+  <div class="wrap">
+    <span class="eyebrow">32 QR code types</span>
+    <h2>Pick what you need to make</h2>
+    <p class="lede">Every one is free, unlimited and runs in your browser. No
+      account, no watermark, and nothing you type is uploaded.</p>
+    <div class="type-cards">
+        <a class="type-card" href="qr-code-generator.html">Website link</a>
+        <a class="type-card" href="qr-code-generator-with-logo.html">Logo QR code</a>
+        <a class="type-card" href="text-to-qr-code-generator.html">Plain text</a>
+        <a class="type-card" href="wifi-qr-code-generator.html">Wi-Fi</a>
+        <a class="type-card" href="vcard-qr-code-generator.html">vCard contact</a>
+        <a class="type-card" href="email-qr-code-generator.html">Email</a>
+        <a class="type-card" href="sms-qr-code-generator.html">SMS</a>
+        <a class="type-card" href="phone-call-qr-code-generator.html">Phone call</a>
+        <a class="type-card" href="whatsapp-qr-code-generator.html">WhatsApp</a>
+        <a class="type-card" href="location-qr-code-generator.html">Location</a>
+        <a class="type-card" href="event-qr-code-generator.html">Calendar event</a>
+        <a class="type-card" href="google-review-qr-code-generator.html">Google review</a>
+        <a class="type-card" href="restaurant-menu-qr-code-generator.html">Restaurant menu</a>
+        <a class="type-card" href="bulk-qr-code-generator.html">Bulk generate</a>
+        <a class="type-card" href="app-download-qr-code-generator.html">App download</a>
+        <a class="type-card" href="zoom-meeting-qr-code-generator.html">Zoom meeting</a>
+        <a class="type-card" href="google-form-qr-code-generator.html">Google Form</a>
+        <a class="type-card" href="pdf-qr-code-generator.html">PDF document</a>
+        <a class="type-card" href="paypal-qr-code-generator.html">PayPal</a>
+        <a class="type-card" href="upi-qr-code-generator.html">UPI payment</a>
+        <a class="type-card" href="bitcoin-qr-code-generator.html">Bitcoin</a>
+        <a class="type-card" href="ethereum-qr-code-generator.html">Ethereum</a>
+        <a class="type-card" href="instagram-qr-code-generator.html">Instagram</a>
+        <a class="type-card" href="facebook-qr-code-generator.html">Facebook</a>
+        <a class="type-card" href="youtube-qr-code-generator.html">YouTube</a>
+        <a class="type-card" href="tiktok-qr-code-generator.html">TikTok</a>
+        <a class="type-card" href="twitter-x-qr-code-generator.html">X / Twitter</a>
+        <a class="type-card" href="linkedin-qr-code-generator.html">LinkedIn</a>
+        <a class="type-card" href="telegram-qr-code-generator.html">Telegram</a>
+        <a class="type-card" href="snapchat-qr-code-generator.html">Snapchat</a>
+        <a class="type-card" href="spotify-qr-code-generator.html">Spotify</a>
+        <a class="type-card" href="pinterest-qr-code-generator.html">Pinterest</a>
+    </div>
+  </div>
+</section>
+
+<section class="section section-ink">
+  <div class="wrap">
+    <span class="eyebrow">Why scanning needs checking</span>
+    <h2>QR code scams work because nobody can read a QR code</h2>
+    <p class="lede">Criminals stick their own code over the real one on a parking
+      meter, a restaurant table or a delivery notice. You scan, a login page opens,
+      and it looks exactly right. The technique has a name now — quishing — and the
+      only defence is reading the address before the page loads. That is what a
+      QR code scanner should do, and almost none of them do it.</p>
+
+    <ul class="checks" style="margin-top:2.5rem">
+      <li><span class="num">01</span> Code-executing schemes like javascript: and data:</li>
+      <li><span class="num">02</span> Insecure HTTP, where anything you send can be read</li>
+      <li><span class="num">03</span> A bare IP address in place of a domain name</li>
+      <li><span class="num">04</span> Addresses obfuscated as hexadecimal or octal numbers</li>
+      <li><span class="num">05</span> Punycode domains that render as familiar words</li>
+      <li><span class="num">06</span> One word mixing two alphabets — the homograph attack</li>
+      <li><span class="num">07</span> Domains written in a non-Latin alphabet</li>
+      <li><span class="num">08</span> ASCII lookalikes: paypa1, g00gle, rnicrosoft</li>
+      <li><span class="num">09</span> The &quot;@&quot; trick, which hides the real destination</li>
+      <li><span class="num">10</span> Link shorteners masking the true target</li>
+      <li><span class="num">11</span> Throwaway domain endings favoured by scammers</li>
+      <li><span class="num">12</span> Urgent login wording built into the domain</li>
+      <li><span class="num">13</span> Unusually deep subdomain chains</li>
+      <li><span class="num">14</span> Connections on a non-standard port</li>
+      <li><span class="num">15</span> A famous brand outside its own registrable domain</li>
+      <li><span class="num">16</span> Links ending in an executable file</li>
+      <li><span class="num">17</span> Executables hidden in query parameters</li>
+      <li><span class="num">18</span> Open redirects carrying a second address</li>
+      <li><span class="num">19</span> Paths asking for passwords, OTPs or recovery phrases</li>
+      <li><span class="num">20</span> Unusually long addresses that bury the destination</li>
+    </ul>
+    <p style="margin-top:2rem"><a class="btn btn-ghost" style="color:#fff;border-color:rgba(255,255,255,.25)" href="qr-code-safety.html">How each check works</a></p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <span class="eyebrow">The app</span>
+    <h2>A QR code scanner and barcode reader that respects you</h2>
+    <div class="grid grid-3" style="margin-top:2rem">
+      <div class="card">
+        <h3>Scanning stays free</h3>
+        <p>Scanning, all 21 safety checks, history, search and every code type you
+          can create — free, permanently. The safety engine is the product, not the
+          upsell.</p>
+      </div>
+      <div class="card">
+        <h3>Works offline</h3>
+        <p>The checks run on your phone. No link you scan is sent to a server to be
+          rated, so nobody builds a profile from what you point your camera at.</p>
+      </div>
+      <div class="card">
+        <h3>Reads every format</h3>
+        <p>QR codes plus EAN, UPC, Code 128, Code 39, ITF, PDF417, Aztec and Data
+          Matrix — a barcode scanner and a QR reader in one.</p>
+      </div>
+      <div class="card">
+        <h3>14 languages</h3>
+        <p>English, Chinese, Hindi, Spanish, Arabic, French, Bengali, Portuguese,
+          Russian, Urdu, Indonesian, German, Japanese and Turkish.</p>
+      </div>
+      <div class="card">
+        <h3>Scan sessions</h3>
+        <p>Named runs for stock counts and event check-in. Repeats fold into a
+          quantity, or get flagged — whichever your job needs.</p>
+      </div>
+      <div class="card">
+        <h3>Bulk generate</h3>
+        <p>Turn a CSV into hundreds of codes at once, exported as a zip — table
+          numbers, asset tags, ticket batches.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="guides">
+  <div class="wrap">
+    <span class="eyebrow">Guides</span>
+    <h2>The questions people actually ask</h2>
+    <p class="lede">Written from building the scanner, not summarised from other
+      people's articles. Real numbers, real failure modes, and the trade-offs
+      that do not favour us.</p>
+    <div class="guide-cards">
+      <a class="guide-card" href="why-is-my-qr-code-not-scanning.html">
+        <h3>Why Is My QR Code Not Scanning?</h3>
+        <p>A QR code usually fails to scan for one of three reasons: it is printed too small for the viewing distance, it has too…</p>
+      </a>
+      <a class="guide-card" href="qr-code-size-for-printing.html">
+        <h3>What Size Should a QR Code Be for Printing?</h3>
+        <p>The working rule is that a QR code should be about one tenth of the distance it will be scanned from. A code read at 30…</p>
+      </a>
+      <a class="guide-card" href="do-qr-codes-expire.html">
+        <h3>Do QR Codes Expire?</h3>
+        <p>Static QR codes never expire. The destination is encoded in the pattern itself, so a printed code works for as long as…</p>
+      </a>
+      <a class="guide-card" href="can-a-qr-code-steal-your-information.html">
+        <h3>Can a QR Code Steal Your Information?</h3>
+        <p>A QR code cannot steal anything by itself. It contains only text, and scanning it does not run code on your phone. The…</p>
+      </a>
+      <a class="guide-card" href="qr-code-sticker-scams.html">
+        <h3>QR Code Sticker Scams: How They Work</h3>
+        <p>The scam is physical: a criminal prints a QR code sticker and places it over the genuine one on a parking meter,…</p>
+      </a>
+      <a class="guide-card" href="qr-code-with-logo-scannable.html">
+        <h3>Will a Logo Stop a QR Code From Scanning?</h3>
+        <p>A logo will not break a QR code if it covers less than about 20% of the area and never touches the three large corner…</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" id="faq">
+  <div class="wrap">
+    <span class="eyebrow">Questions</span>
+    <h2>QR codes, answered plainly</h2>
+    <div class="faq" style="margin-top:1.5rem">
+      <details open>
+        <summary>Is this QR code generator really free?</summary>
+        <p>Yes, and there is no account, watermark, scan limit or expiry. The
+          generator runs in your browser using your own device, so it costs us
+          nothing to let you use it.</p>
+      </details>
+      <details>
+        <summary>How do I know if a QR code is safe to scan?</summary>
+        <p>You cannot tell by looking — that is the whole problem. Use a scanner
+          that shows you the address and checks it before opening. Paste any link
+          into the checker at the top of this page to see the kind of findings
+          TrustScan reports on your phone.</p>
+      </details>
+      <details>
+        <summary>What is the difference between a static and a dynamic QR code?</summary>
+        <p>A static code contains the destination itself and works forever. A
+          dynamic code contains a link to someone else's server, which then
+          forwards you — so it can be edited later, but it can also be repointed,
+          tracked, or switched off when that company disappears. Every code made
+          here is static.</p>
+      </details>
+      <details>
+        <summary>Can I make a Wi-Fi QR code for guests?</summary>
+        <p>Yes. Choose Wi-Fi in the generator, enter the network name, password and
+          security type, and print the result. Guests point a camera at it and join
+          without you reading a password out loud.</p>
+      </details>
+      <details>
+        <summary>Can I create a QR code for my business card?</summary>
+        <p>Choose Contact card. It produces a vCard containing your name, company,
+          phone, email, website and address, which saves straight into the phone's
+          contacts app when scanned.</p>
+      </details>
+      <details>
+        <summary>Do QR codes expire?</summary>
+        <p>Static ones do not. A printed QR code from this site will still work in
+          ten years, because the information is in the pattern itself rather than on
+          a server that has to stay online.</p>
+      </details>
+      <details>
+        <summary>Can I put a logo in the middle of a QR code?</summary>
+        <p>Yes — free, right here in the browser. Use the
+          <a href="qr-code-generator-with-logo.html">logo generator</a>, set error
+          correction to Highest, and keep the logo clear of the three corner
+          squares. The app does it too, with a 2,400 px export.</p>
+      </details>
+      <details>
+        <summary>Does the app work without an internet connection?</summary>
+        <p>Yes. Scanning, generating and all 21 safety checks work with no
+          connection at all, because none of it depends on a server.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Is this QR code generator really free?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes, and there is no account, watermark, scan limit or expiry. The generator runs in your browser using your own device." } },
+    { "@type": "Question", "name": "How do I know if a QR code is safe to scan?",
+      "acceptedAnswer": { "@type": "Answer", "text": "You cannot tell by looking. Use a scanner that shows the address and checks it before opening, such as TrustScan, which runs 21 link-safety checks on every code." } },
+    { "@type": "Question", "name": "What is the difference between a static and a dynamic QR code?",
+      "acceptedAnswer": { "@type": "Answer", "text": "A static code contains the destination itself and works forever. A dynamic code links to another company's server that forwards you, so it can be edited, tracked, repointed or switched off." } },
+    { "@type": "Question", "name": "Can I make a Wi-Fi QR code for guests?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Choose Wi-Fi in the generator, enter the network name, password and security type, and print it. Guests scan to join without typing a password." } },
+    { "@type": "Question", "name": "Do QR codes expire?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Static QR codes do not expire. The information is in the pattern itself rather than on a server that must stay online." } }
+  ]
+}
+</script>
+
+<section class="section">
+  <div class="wrap">
+    <div class="cta-band">
+      <h2>Scan with something that checks first</h2>
+      <p>Free forever, no account, and every safety check included. Generate codes
+        here, scan them safely on your phone.</p>
+      <div class="stores">
+        <a class="store store-play" href="https://play.google.com/store/apps/details?id=com.trustscan.scanner" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#00D3FF" d="M3.61 2.30a1.5 1.5 0 0 0-.35.99v17.42c0 .38.13.72.35.99l.06.06L13.4 12v-.23L3.67 2.24z"/><path fill="#FFCE00" d="M16.66 15.29L13.4 12.03v-.23l3.26-3.26.07.04 3.86 2.19c1.1.63 1.1 1.65 0 2.28l-3.86 2.19z"/><path fill="#FF3A44" d="M16.73 15.25L13.4 11.92 3.61 21.70c.36.39.96.43 1.64.05z"/><path fill="#00F076" d="M16.73 8.59L5.25 2.09c-.68-.39-1.28-.34-1.64.05l9.79 9.78z"/></svg>
+          <span><small>Get it on</small><b>Google Play</b></span>
+        </a>
+        <a class="store store-apple" href="https://apps.apple.com/app/id6804426564" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.4 12.7c0-2.2 1.8-3.3 1.9-3.4-1-1.5-2.6-1.7-3.2-1.7-1.4-.1-2.7.8-3.3.8-.7 0-1.7-.8-2.8-.8-1.5 0-2.8.8-3.5 2.1-1.5 2.6-.4 6.5 1.1 8.6.7 1 1.6 2.2 2.7 2.2 1.1 0 1.5-.7 2.8-.7s1.6.7 2.8.7 1.9-1 2.6-2a9 9 0 0 0 1.2-2.4c-.1 0-2.3-.9-2.3-3.4ZM14.2 5.9c.6-.7 1-1.7.9-2.7-.9 0-2 .6-2.6 1.3-.6.6-1.1 1.7-1 2.6 1 .1 2-.5 2.7-1.2Z"/></svg>
+          <span><small>Get it on</small><b>App Store</b></span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="brand" href="/"><img src="assets/img/logo96.png" alt="" width="32" height="32">TrustScan</a>
+        <p style="color:var(--muted);margin-top:.8rem;max-width:34ch">A QR code
+          scanner that reads the link before you do.</p>
+      </div>
+      <div>
+        <h2>Tools</h2>
+        <ul>
+          <li><a href="qr-code-generator.html">QR code generator</a></li>
+          <li><a href="wifi-qr-code-generator.html">Wi-Fi QR code</a></li>
+          <li><a href="vcard-qr-code-generator.html">vCard QR code</a></li>
+          <li><a href="qr-code-safety.html">Link checker</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Guides</h2>
+        <ul>
+          <li><a href="why-is-my-qr-code-not-scanning.html">QR code not scanning</a></li>
+          <li><a href="qr-code-size-for-printing.html">QR code size for print</a></li>
+          <li><a href="do-qr-codes-expire.html">Do QR codes expire?</a></li>
+          <li><a href="qr-code-sticker-scams.html">QR sticker scams</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>App</h2>
+        <ul>
+          <li><a href="https://play.google.com/store/apps/details?id=com.trustscan.scanner" rel="noopener noreferrer">Google Play</a></li>
+          <li><a href="#get">App Store</a></li>
+          <li><a href="qr-code-safety.html">Safety checks</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Company</h2>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="support.html">Support</a></li>
+          <li><a href="privacy.html">Privacy</a></li>
+          <li><a href="mailto:info@trustscanqr.com">info@trustscanqr.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-legal">
+      <span>© 2026 TrustScan</span>
+      <span>Google Play is a trademark of Google LLC. App Store is a trademark of Apple Inc.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/safety.js"></script>
+<script src="assets/js/site.js"></script>
+</body>
+</html>

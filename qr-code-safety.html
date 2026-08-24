@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Is This QR Code Safe? Check a Link Before You Scan | TrustScan</title>
+<meta name="description" content="QR code scams work because nobody can read a QR code by eye. Check any link free, and see the 21 safety checks TrustScan runs before a page opens.">
+<link rel="canonical" href="https://trustscanqr.com/qr-code-safety.html">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Is this QR code safe? Check any link free">
+<meta property="og:description" content="How QR code scams work, and the 21 checks that catch them.">
+<meta property="og:url" content="https://trustscanqr.com/qr-code-safety.html">
+<meta property="og:image" content="https://trustscanqr.com/assets/img/logo96.png">
+<link rel="icon" href="assets/img/logo96.png" type="image/png">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; connect-src 'none'; base-uri 'self'; form-action 'none';">
+<link rel="preload" href="assets/fonts/Manrope-ExtraBold.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/Manrope-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Is this QR code safe? How to check a link before you scan",
+  "description": "How QR code scams work and the 21 checks that catch them.",
+  "author": { "@type": "Organization", "name": "TrustScan" },
+  "publisher": { "@type": "Organization", "name": "TrustScan",
+    "logo": { "@type": "ImageObject", "url": "https://trustscanqr.com/assets/img/logo96.png" } },
+  "mainEntityOfPage": "https://trustscanqr.com/qr-code-safety.html"
+}
+</script>
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="index.html"><img src="assets/img/logo96.png" alt="" width="32" height="32">TrustScan</a>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false"><span></span></button>
+    <nav class="nav" data-open="false">
+      <a href="qr-code-generator.html">QR generator</a>
+      <a href="qr-code-safety.html">Link safety</a>
+      <a href="index.html#faq">FAQ</a>
+      <a href="support.html">Support</a>
+      <a class="btn btn-chrome" href="index.html#get"><svg class="chrome-mark" viewBox="0 0 48 48" width="17" height="17" aria-hidden="true"><path fill="#EA4335" d="M14 6.68A20 20 0 0 1 44 24H34a10 10 0 0 0-15-8.66Z"/><path fill="#FBBC04" d="M44 24a20 20 0 0 1-30 17.32L19 32.66A10 10 0 0 0 34 24Z"/><path fill="#34A853" d="M14 41.32A20 20 0 0 1 14 6.68L19 15.34a10 10 0 0 0 0 17.32Z"/><circle cx="24" cy="24" r="10.5" fill="#fff"/><circle cx="24" cy="24" r="8.6" fill="#4285F4"/></svg>Chrome extension</a>
+      <a class="btn btn-primary" href="index.html#get">Get the app</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main" tabindex="-1">
+<section class="section">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">Link safety</span>
+      <h1 style="font-size:clamp(2rem,4.5vw,3.1rem)">Is this QR code safe?</h1>
+      <p class="lede">You cannot tell by looking at it — a QR code is a picture of
+        text, and the text is only readable to a machine. Paste the link your
+        scanner showed you and see what our checks find. It runs here, in your
+        browser, and is not sent anywhere.</p>
+    </div>
+    <div class="frame">
+      <span class="frame-b1"></span><span class="frame-b2"></span>
+      <div class="checker">
+        <label for="check-url">Check a link</label>
+        <div class="checker-row">
+          <input id="check-url" type="text" spellcheck="false" autocomplete="off"
+            placeholder="paste any link" value="">
+        </div>
+        <div class="samples">
+          <button type="button" data-sample="https://p%D0%B0ypal.com/signin">lookalike</button>
+          <button type="button" data-sample="https://apple-support.com/verify">fake brand</button>
+          <button type="button" data-sample="http://0xd8.0x3a.0xd3.0x2e/">hidden IP</button>
+          <button type="button" data-sample="https://example.com/r?url=https%253A%252F%252Fevil.tk">redirect</button>
+        </div>
+        <div class="verdict" id="check-out" data-level="" role="status" aria-live="polite" aria-atomic="true"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="wrap prose">
+    <h2>How QR code scams work</h2>
+    <p>The attack is physical and almost embarrassingly simple. Someone prints a QR
+      code sticker and puts it over the real one — on a parking meter, a restaurant
+      table, an EV charger, a delivery card pushed through your door. You scan it
+      because scanning is what those codes are for. A page opens asking you to pay
+      a fine, confirm a delivery, or log in. It looks right because it was copied
+      from the real thing.</p>
+    <p>The industry calls this <strong>quishing</strong> — phishing delivered by QR
+      code. It works better than email phishing for one reason: in an email you can
+      hover over a link and read where it goes. With a QR code there is nothing to
+      read. You are trusting a pattern of squares.</p>
+
+    <h3>Why your phone's built-in scanner is not enough</h3>
+    <p>Most built-in camera scanners show you a shortened preview of the address in
+      a small banner, and one tap opens it. That preview is often truncated in
+      exactly the place where the deception lives — the end of the domain. A
+      lookalike domain and the real one can be visually identical in a phone-sized
+      font.</p>
+
+    <h2>The 21 checks</h2>
+    <p>These run on your device the moment a code is read, before anything opens.
+      Every one of them is free in the app, permanently.</p>
+
+    <h3>Domain deception</h3>
+    <ul>
+      <li><strong>Lookalike alphabets.</strong> Cyrillic “а”, Greek “ο” and
+        fullwidth forms render identically to Latin letters. <code>раypal.com</code>
+        is not <code>paypal.com</code>.</li>
+      <li><strong>Punycode.</strong> The <code>xn--</code> encoding browsers use for
+        international domains, which displays as ordinary letters.</li>
+      <li><strong>Percent-encoded homographs.</strong> The same trick written as
+        <code>%D0%B0</code> escapes, which looks like plain ASCII to a naive checker
+        but is decoded by the browser before it connects.</li>
+      <li><strong>Brand impersonation.</strong> A famous name outside its own
+        domain — <code>paypal-billing.com</code>, <code>apple-support.com</code>,
+        <code>netflix.secure-login.xyz</code>.</li>
+    </ul>
+
+    <h3>Hidden destinations</h3>
+    <ul>
+      <li><strong>Raw IP addresses</strong> where a domain name should be.</li>
+      <li><strong>Obfuscated addresses</strong> written in hex or octal, such as
+        <code>0xd8.0x3a.0xd3.0x2e</code>, which browsers still resolve.</li>
+      <li><strong>The “@” trick.</strong> Everything before an <code>@</code> in a
+        URL is ignored, so a link can display a trusted name and go elsewhere.</li>
+      <li><strong>Link shorteners</strong>, which hide the destination entirely
+        until you have already arrived.</li>
+      <li><strong>Open redirects</strong> — a second address carried inside the
+        first, laundering a scam link through a domain you trust.</li>
+    </ul>
+
+    <h3>Suspicious shape</h3>
+    <ul>
+      <li><strong>Throwaway domain endings</strong> disproportionately used for
+        short-lived scam sites.</li>
+      <li><strong>Login words inside the domain</strong>, like
+        <code>verify-</code> or <code>secure-</code>.</li>
+      <li><strong>Deep subdomain chains</strong> that push the real domain off the
+        right-hand edge of a phone screen.</li>
+      <li><strong>File downloads</strong> — links ending in <code>.apk</code>,
+        <code>.exe</code> or similar, which install something rather than open a
+        page.</li>
+      <li><strong>Credential requests</strong> — addresses mentioning passwords,
+        one-time codes, 2FA or recovery phrases.</li>
+    </ul>
+
+    <h2>Spotting a tampered code in the real world</h2>
+    <ul>
+      <li><strong>Feel the edges.</strong> A sticker over a printed code has a lip
+        you can catch with a fingernail.</li>
+      <li><strong>Look for mismatch.</strong> Wrong shade of white, a slightly
+        different size, a logo that does not sit where it does elsewhere.</li>
+      <li><strong>Be suspicious of urgency.</strong> Parking fines, failed
+        deliveries and account suspensions are the three most common pretexts.</li>
+      <li><strong>Never enter card details</strong> on a page you reached by
+        scanning a code in public. Type the company's address yourself instead.</li>
+    </ul>
+
+    <h2>What we do not do</h2>
+    <p>The checks run offline, on your phone. Links are not sent to a server for a
+      reputation lookup, which is how most “safe browsing” features work and how
+      they end up with a record of everything you scan. The trade is honest: we
+      catch structural deception rather than a live blocklist of known-bad sites.
+      For the physical sticker-over-a-poster attack, structure is what gives it
+      away.</p>
+
+    <p style="margin-top:2rem">
+      <a class="btn btn-primary btn-lg" href="index.html#get">Get TrustScan free</a>
+      <a class="btn btn-ghost btn-lg" href="qr-code-generator.html">Create a QR code</a>
+    </p>
+  </div>
+</section>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="brand" href="index.html"><img src="assets/img/logo96.png" alt="" width="32" height="32">TrustScan</a>
+        <p style="color:var(--muted);margin-top:.8rem;max-width:34ch">A QR code
+          scanner that reads the link before you do.</p>
+      </div>
+      <div>
+        <h2>Tools</h2>
+        <ul>
+          <li><a href="qr-code-generator.html">QR code generator</a></li>
+          <li><a href="wifi-qr-code-generator.html">Wi-Fi QR code</a></li>
+          <li><a href="vcard-qr-code-generator.html">vCard QR code</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Guides</h2>
+        <ul>
+          <li><a href="why-is-my-qr-code-not-scanning.html">QR code not scanning</a></li>
+          <li><a href="qr-code-size-for-printing.html">QR code size for print</a></li>
+          <li><a href="do-qr-codes-expire.html">Do QR codes expire?</a></li>
+          <li><a href="qr-code-sticker-scams.html">QR sticker scams</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>App</h2>
+        <ul>
+          <li><a href="https://play.google.com/store/apps/details?id=com.trustscan.scanner" rel="noopener noreferrer">Google Play</a></li>
+          <li><a href="https://apps.apple.com/app/id6804426564" rel="noopener">App Store</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Company</h2>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="support.html">Support</a></li>
+          <li><a href="privacy.html">Privacy</a></li>
+          <li><a href="mailto:info@trustscanqr.com">info@trustscanqr.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-legal">
+      <span>© 2026 TrustScan</span>
+      <span>Google Play is a trademark of Google LLC. App Store is a trademark of Apple Inc.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/safety.js"></script>
+<script src="assets/js/site.js"></script>
+</body>
+</html>

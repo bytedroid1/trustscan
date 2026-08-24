@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy — TrustScan</title>
+<meta name="description" content="What TrustScan collects and what it does not. Scans, generated QR codes and history stay on your device — the link checks run offline, not on a server.">
+<link rel="canonical" href="https://trustscanqr.com/privacy.html">
+<meta name="robots" content="index, follow">
+<link rel="icon" href="assets/img/logo96.png" type="image/png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="TrustScan">
+<meta property="og:title" content="Privacy Policy — TrustScan">
+<meta property="og:description" content="What TrustScan collects and what it does not. Scans, generated QR codes and history stay on your device — the link checks run offline, not on a server.">
+<meta property="og:url" content="https://trustscanqr.com/privacy.html">
+<meta property="og:image" content="https://trustscanqr.com/assets/img/logo96.png">
+<meta property="og:image:width" content="1024">
+<meta property="og:image:height" content="1024">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; connect-src 'none'; base-uri 'self'; form-action 'none';">
+<link rel="preload" href="assets/fonts/Manrope-ExtraBold.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/Manrope-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="index.html"><img src="assets/img/logo96.png" alt="" width="32" height="32">TrustScan</a>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false"><span></span></button>
+    <nav class="nav" data-open="false">
+      <a href="qr-code-generator.html">QR generator</a>
+      <a href="qr-code-safety.html">Link safety</a>
+      <a href="index.html#faq">FAQ</a>
+      <a href="support.html">Support</a>
+      <a class="btn btn-chrome" href="index.html#get"><svg class="chrome-mark" viewBox="0 0 48 48" width="17" height="17" aria-hidden="true"><path fill="#EA4335" d="M14 6.68A20 20 0 0 1 44 24H34a10 10 0 0 0-15-8.66Z"/><path fill="#FBBC04" d="M44 24a20 20 0 0 1-30 17.32L19 32.66A10 10 0 0 0 34 24Z"/><path fill="#34A853" d="M14 41.32A20 20 0 0 1 14 6.68L19 15.34a10 10 0 0 0 0 17.32Z"/><circle cx="24" cy="24" r="10.5" fill="#fff"/><circle cx="24" cy="24" r="8.6" fill="#4285F4"/></svg>Chrome extension</a>
+      <a class="btn btn-primary" href="index.html#get">Get the app</a>
+    </nav>
+  </div>
+</header>
+<main id="main" tabindex="-1">
+<section class="section"><div class="wrap prose">
+<span class="eyebrow">Privacy</span>
+<h1 style="font-size:clamp(2rem,4.5vw,3rem)">Privacy policy</h1>
+<p class="lede">The short version: what you scan and what you create stay on your
+  device. This page covers the parts that do not.</p>
+
+<h2>This website</h2>
+<p>The QR code generator and the link checker run entirely in your browser using
+  JavaScript. What you type into either one is never transmitted to us — there is
+  no upload step, and closing the tab discards it. We do not set advertising
+  cookies or run analytics scripts on this site.</p>
+
+<h2>The app</h2>
+<h3>Stays on your phone</h3>
+<ul>
+  <li>Everything you scan, and your scan history</li>
+  <li>Every code you create, and any logo you add</li>
+  <li>Scan sessions and their contents</li>
+  <li>All 21 link-safety checks — they run offline, so no link you scan is sent
+    anywhere to be rated</li>
+</ul>
+
+<h3>Leaves your phone</h3>
+<ul>
+  <li><strong>Crash reports</strong> via Firebase Crashlytics — a stack trace and
+    device model when something goes wrong. No scan contents.</li>
+  <li><strong>Anonymous usage counts</strong> via Firebase Analytics — which
+    screens are opened, not what they contain.</li>
+  <li><strong>Purchases</strong> via RevenueCat, which validates your receipt with
+    the store. We never see card details; the store handles payment.</li>
+  <li><strong>Advertising</strong> on the free Android version, via Google AdMob.
+    Serving an ad may involve your advertising ID, device type and approximate
+    location from your IP. Pro removes ads entirely.</li>
+</ul>
+
+<h3>Permissions and why</h3>
+<ul>
+  <li><strong>Camera</strong> — to read codes. Nothing is recorded or uploaded.</li>
+  <li><strong>Photos</strong> — to scan a code from a saved image, and to save the
+    codes you create.</li>
+  <li><strong>Biometrics</strong> — only if you turn on the history lock. Your
+    device performs the check; the app never sees biometric data.</li>
+</ul>
+
+<h2>The browser extension</h2>
+<p>TrustScan for Chrome makes a QR code for the page you are on and checks where a
+  link goes before you open it. Both jobs run inside your browser, on your own
+  machine. The extension has no server to talk to, sends no network requests of
+  any kind, and stores nothing about the pages you visit.</p>
+
+<h3>What it can see, and when</h3>
+<ul>
+  <li><strong>The page you are on</strong> — only at the moment you click the
+    TrustScan icon or use one of its right-click menu items. This is Chrome's
+    <code>activeTab</code> permission: it grants access to one tab, on your
+    action, and it lapses again afterwards. The extension cannot read pages you
+    have not pointed it at.</li>
+  <li><strong>The address of every open tab</strong> — only if you switch on the
+    toolbar badge in the extension's settings, and only after Chrome has asked
+    you and you have agreed. Chrome describes this as &ldquo;read your browsing
+    history&rdquo;. It is off when you install, the extension works without it,
+    and switching it back off returns the permission to Chrome rather than
+    merely ignoring it.</li>
+  <li><strong>The site a shortened link points to</strong> — only if you press
+    &ldquo;Where does this go?&rdquo; on a link, and only after Chrome has asked
+    you and you have agreed. The extension then contacts that link&rsquo;s own
+    host to ask where it leads: the same host your browser would contact a
+    second later if you simply opened the link. It requests the address only,
+    never the page, and sends nothing to us. This access is not held at
+    install, and you can withdraw it at any time from
+    <code>chrome://extensions</code>.</li>
+  <li><strong>Nothing else.</strong> Apart from that one action, which you
+    start, the extension makes no network requests at all and cannot read page
+    content, form fields, passwords or cookies on any site.</li>
+</ul>
+
+<h3>What it stores</h3>
+<p>Only your own settings: the module shape, corner style, colour and error
+  correction level you last chose, and the two switches on the settings page.
+  These sync through your Chrome profile if you have Chrome sync turned on, in
+  which case Google carries them under
+  <a href="https://policies.google.com/privacy" rel="noopener">its own privacy
+  policy</a>. No addresses, no page content, and no history are stored — not
+  locally, not synced, not anywhere.</p>
+
+<h3>What it does not do</h3>
+<p>The extension shows no advertising, contains no analytics or tracking code,
+  and does not sell, share or transfer any data to anyone. The safety checks are
+  not a lookup against a remote blocklist; they are the same rules the app runs,
+  applied to the address itself, here on your machine. That is why they work
+  with no connection at all.</p>
+
+<h2>Your choices</h2>
+<p>History can be turned off entirely in Settings, and cleared at any time. On
+  Android you can reset your advertising ID in system settings. Deleting the app
+  removes everything it stored on your device.</p>
+
+<h2>Children</h2>
+<p>TrustScan is not directed at children under 13 and we do not knowingly collect
+  data from them.</p>
+
+<h2>Contact</h2>
+<p>Questions about this policy: <a href="mailto:info@trustscanqr.com">info@trustscanqr.com</a></p>
+</div></section>
+</main>
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="brand" href="index.html"><img src="assets/img/logo96.png" alt="" width="32" height="32">TrustScan</a>
+        <p style="color:var(--muted);margin-top:.8rem;max-width:34ch">A QR code
+          scanner that reads the link before you do.</p>
+      </div>
+      <div>
+        <h2>Tools</h2>
+        <ul>
+          <li><a href="qr-code-generator.html">QR code generator</a></li>
+          <li><a href="wifi-qr-code-generator.html">Wi-Fi QR code</a></li>
+          <li><a href="vcard-qr-code-generator.html">vCard QR code</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Guides</h2>
+        <ul>
+          <li><a href="why-is-my-qr-code-not-scanning.html">QR code not scanning</a></li>
+          <li><a href="qr-code-size-for-printing.html">QR code size for print</a></li>
+          <li><a href="do-qr-codes-expire.html">Do QR codes expire?</a></li>
+          <li><a href="qr-code-sticker-scams.html">QR sticker scams</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>App</h2>
+        <ul>
+          <li><a href="https://play.google.com/store/apps/details?id=com.trustscan.scanner" rel="noopener noreferrer">Google Play</a></li>
+          <li><a href="https://apps.apple.com/app/id6804426564" rel="noopener">App Store</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Company</h2>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="support.html">Support</a></li>
+          <li><a href="privacy.html">Privacy</a></li>
+          <li><a href="mailto:info@trustscanqr.com">info@trustscanqr.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-legal">
+      <span>© 2026 TrustScan</span>
+      <span>Google Play is a trademark of Google LLC. App Store is a trademark of Apple Inc.</span>
+    </div>
+  </div>
+</footer>
+<script src="assets/js/site.js"></script>
+</body>
+</html>

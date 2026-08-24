@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Do QR Codes Expire? Static vs Dynamic, Explained</title>
+<meta name="description" content="Static QR codes never expire — the destination is in the pattern. Dynamic ones can stop working at any time. Here is how to tell which kind you have.">
+<meta name="keywords" content="do qr codes expire, qr code expiry, does a qr code expire, qr code stop working">
+<link rel="canonical" href="https://trustscanqr.com/do-qr-codes-expire.html">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="TrustScan">
+<meta property="og:title" content="Do QR Codes Expire?">
+<meta property="og:description" content="Static QR codes never expire — the destination is in the pattern. Dynamic ones can stop working at any time. Here is how to tell which kind you have.">
+<meta property="og:url" content="https://trustscanqr.com/do-qr-codes-expire.html">
+<meta property="og:image" content="https://trustscanqr.com/assets/img/logo96.png">
+<meta property="og:image:width" content="1024">
+<meta property="og:image:height" content="1024">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/img/logo96.png" type="image/png">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; connect-src 'none'; base-uri 'self'; form-action 'none'">
+<link rel="preload" href="assets/fonts/Manrope-ExtraBold.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/Manrope-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Do QR Codes Expire?", "description": "Static QR codes never expire \u2014 the destination is in the pattern. Dynamic ones can stop working at any time. Here is how to tell which kind you have.", "author": {"@type": "Organization", "name": "TrustScan", "url": "https://trustscanqr.com/about.html"}, "publisher": {"@type": "Organization", "name": "TrustScan", "logo": {"@type": "ImageObject", "url": "https://trustscanqr.com/assets/img/logo96.png"}}, "mainEntityOfPage": "https://trustscanqr.com/do-qr-codes-expire.html", "datePublished": "2026-08-24", "dateModified": "2026-08-24"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://trustscanqr.com/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://trustscanqr.com/qr-code-safety.html"}, {"@type": "ListItem", "position": 3, "name": "Do QR Codes Expire?", "item": "https://trustscanqr.com/do-qr-codes-expire.html"}]}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="index.html"><img src="assets/img/logo96.png" alt="" width="32" height="32">TrustScan</a>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false"><span></span></button>
+    <nav class="nav" data-open="false">
+      <a href="qr-code-generator.html">QR generator</a>
+      <a href="qr-code-safety.html">Link safety</a>
+      <a href="index.html#faq">FAQ</a>
+      <a href="support.html">Support</a>
+      <a class="btn btn-chrome" href="index.html#get"><svg class="chrome-mark" viewBox="0 0 48 48" width="17" height="17" aria-hidden="true"><path fill="#EA4335" d="M14 6.68A20 20 0 0 1 44 24H34a10 10 0 0 0-15-8.66Z"/><path fill="#FBBC04" d="M44 24a20 20 0 0 1-30 17.32L19 32.66A10 10 0 0 0 34 24Z"/><path fill="#34A853" d="M14 41.32A20 20 0 0 1 14 6.68L19 15.34a10 10 0 0 0 0 17.32Z"/><circle cx="24" cy="24" r="10.5" fill="#fff"/><circle cx="24" cy="24" r="8.6" fill="#4285F4"/></svg>Chrome extension</a>
+      <a class="btn btn-primary" href="index.html#get">Get the app</a>
+    </nav>
+  </div>
+</header>
+<main id="main" tabindex="-1">
+<article class="section">
+  <div class="wrap prose">
+    <nav class="crumbs" aria-label="Breadcrumb">
+      <a href="index.html">Home</a> <span aria-hidden="true">›</span> Do QR Codes Expire?
+    </nav>
+    <h1>Do QR Codes Expire?</h1>
+    <p class="answer">Static QR codes never expire. The destination is encoded in the pattern itself, so a printed code works for as long as the page it points to exists. Dynamic QR codes can expire at any time, because they point at a third party's redirect service rather than at your content.</p>
+
+    <nav class="toc" aria-label="On this page">
+      <h2>On this page</h2>
+      <ol>
+        <li><a href="#what-actually-expires">What actually expires</a></li>
+        <li><a href="#how-to-tell-which-kind-you-have">How to tell which kind you have</a></li>
+        <li><a href="#the-trade-off-stated-honestly">The trade-off, stated honestly</a></li>
+        <li><a href="#what-happens-when-a-redirect-service-closes">What happens when a redirect service closes</a></li>
+        <li><a href="#codes-from-this-site-are-static">Codes from this site are static</a></li>
+      </ol>
+    </nav>
+
+    <h2 id="what-actually-expires">What actually expires</h2>
+The code does not degrade and there is no clock inside it. What expires is the service in the middle. A dynamic code encodes something like <code>qrco.de/abc123</code>, and that short link only works while the company running it keeps working, keeps your account active, and keeps the redirect pointing where you asked.
+    <h2 id="how-to-tell-which-kind-you-have">How to tell which kind you have</h2>
+Scan it and read the address. If it shows your own domain, it is static. If it shows a short link on a company you have never printed on your packaging, it is dynamic — and that company controls where your customers go.
+    <h2 id="the-trade-off-stated-honestly">The trade-off, stated honestly</h2>
+Dynamic codes are genuinely useful: you can change the destination after printing and see scan counts. That is worth paying for in some campaigns. The cost is a permanent dependency and, usually, a subscription. For a menu, a Wi-Fi card or product packaging that has to work in five years, static is the safer choice.
+    <h2 id="what-happens-when-a-redirect-service-closes">What happens when a redirect service closes</h2>
+Every printed code pointing at it becomes a dead link at once. This has happened repeatedly as URL shorteners have shut down — Google's own goo.gl stopped serving most links in 2025. Anything printed at scale outlives the average startup.
+    <h2 id="codes-from-this-site-are-static">Codes from this site are static</h2>
+Every generator here encodes the destination directly. There is no redirect, no account, no scan counter and nothing to renew. That also means we cannot change a code after you print it, which is the honest trade.
+
+    <h2>Check a link before you trust it</h2>
+    <p>Anyone can print a QR code and stick it over yours. TrustScan reads the
+      address and runs 21 checks on it before the page opens — free, offline, and
+      on every scan. <a href="qr-code-safety.html">Try the checker</a> or
+      <a href="index.html#get">get the app</a>.</p>
+
+    <p style="margin-top:2rem">
+      <a class="btn btn-primary btn-lg" href="qr-code-generator.html">Make a static QR code</a>
+    </p>
+
+    <h2>Related guides</h2>
+    <ul>
+        <li><a href="why-is-my-qr-code-not-scanning.html">Why Is My QR Code Not Scanning?</a></li>
+        <li><a href="qr-code-size-for-printing.html">What Size Should a QR Code Be for Printing?</a></li>
+        <li><a href="can-a-qr-code-steal-your-information.html">Can a QR Code Steal Your Information?</a></li>
+        <li><a href="qr-code-sticker-scams.html">QR Code Sticker Scams: How They Work</a></li>
+        <li><a href="qr-code-with-logo-scannable.html">Will a Logo Stop a QR Code From Scanning?</a></li>
+    </ul>
+  </div>
+</article>
+</main>
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="brand" href="index.html"><img src="assets/img/logo96.png" alt="" width="32" height="32">TrustScan</a>
+        <p style="color:var(--muted);margin-top:.8rem;max-width:34ch">A QR code
+          scanner that reads the link before you do.</p>
+      </div>
+      <div>
+        <h2>Popular</h2>
+        <ul>
+          <li><a href="qr-code-generator.html">QR code generator</a></li>
+          <li><a href="wifi-qr-code-generator.html">Wi-Fi QR code</a></li>
+          <li><a href="vcard-qr-code-generator.html">vCard QR code</a></li>
+          <li><a href="google-review-qr-code-generator.html">Google review QR</a></li>
+          <li><a href="bulk-qr-code-generator.html">Bulk QR codes</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Guides</h2>
+        <ul>
+          <li><a href="why-is-my-qr-code-not-scanning.html">QR code not scanning</a></li>
+          <li><a href="qr-code-size-for-printing.html">QR code size for print</a></li>
+          <li><a href="do-qr-codes-expire.html">Do QR codes expire?</a></li>
+          <li><a href="qr-code-sticker-scams.html">QR sticker scams</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>App</h2>
+        <ul>
+          <li><a href="https://play.google.com/store/apps/details?id=com.trustscan.scanner" rel="noopener noreferrer">Google Play</a></li>
+          <li><a href="https://apps.apple.com/app/id6804426564" rel="noopener">App Store</a></li>
+          <li><a href="qr-code-safety.html">Safety checks</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Company</h2>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="support.html">Support</a></li>
+          <li><a href="privacy.html">Privacy</a></li>
+          <li><a href="mailto:info@trustscanqr.com">info@trustscanqr.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-legal">
+      <span>© 2026 TrustScan</span>
+      <span>Google Play is a trademark of Google LLC. App Store is a trademark of Apple Inc. All other trademarks belong to their respective owners.</span>
+    </div>
+  </div>
+</footer>
+<script src="assets/js/site.js"></script>
+</body>
+</html>
