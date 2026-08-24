@@ -1,0 +1,606 @@
+/* TrustScan — trustscanqr.com
+ * Palette and type are the app's own tokens (lib/design/tokens.dart), so the
+ * site and the product read as one thing. Flat and graphic throughout: no
+ * gradients anywhere, by brand rule.
+ */
+
+@font-face {
+  font-family: 'Manrope';
+  src: url('../fonts/Manrope-Regular.woff2') format('woff2'),
+       url('../fonts/Manrope-Regular.ttf') format('truetype');
+  font-weight: 400; font-display: swap;
+}
+@font-face {
+  font-family: 'Manrope';
+  src: url('../fonts/Manrope-Medium.woff2') format('woff2'),
+       url('../fonts/Manrope-Medium.ttf') format('truetype');
+  font-weight: 500; font-display: swap;
+}
+@font-face {
+  font-family: 'Manrope';
+  src: url('../fonts/Manrope-SemiBold.woff2') format('woff2'),
+       url('../fonts/Manrope-SemiBold.ttf') format('truetype');
+  font-weight: 600; font-display: swap;
+}
+@font-face {
+  font-family: 'Manrope';
+  src: url('../fonts/Manrope-Bold.woff2') format('woff2'),
+       url('../fonts/Manrope-Bold.ttf') format('truetype');
+  font-weight: 700; font-display: swap;
+}
+@font-face {
+  font-family: 'Manrope';
+  src: url('../fonts/Manrope-ExtraBold.woff2') format('woff2'),
+       url('../fonts/Manrope-ExtraBold.ttf') format('truetype');
+  font-weight: 800; font-display: swap;
+}
+
+:root {
+  --cobalt: #0B5CFF;
+  --cobalt-deep: #0844CC;
+  --cobalt-soft: #4D8BFF;
+  --accent: #7FB0FF;
+  --ink: #10111A;
+  --ink-soft: #1A1C28;
+  --paper: #FAFAF7;
+  --white: #FFFFFF;
+  --hairline: #E7E7E0;
+  --muted: #5A5C68;
+  --safe: #12996B;
+  --caution: #E08A1E;
+  --danger: #D6274A;
+
+  --r-sm: 12px;
+  --r-md: 16px;
+  --r-lg: 20px;
+  --r-xl: 28px;
+  --gutter: 20px;
+  --maxw: 1120px;
+
+  --mono: ui-monospace, 'SF Mono', SFMono-Regular, Menlo, Consolas, monospace;
+  --sans: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui,
+    sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+/* The header is sticky at 68px, so an unadjusted #anchor scrolls its target
+   completely behind it — "Get the app" landed on nothing. */
+[id] { scroll-margin-top: 88px; }
+
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: .001ms !important;
+    transition-duration: .001ms !important;
+  }
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrap { width: 100%; max-width: var(--maxw); margin: 0 auto; padding: 0 var(--gutter); }
+
+a { color: var(--cobalt); text-decoration: none; }
+a:hover { text-decoration: underline; }
+:focus-visible { outline: 3px solid var(--cobalt); outline-offset: 3px; border-radius: 4px; }
+
+h1, h2, h3 { font-weight: 800; line-height: 1.1; letter-spacing: -0.03em; margin: 0 0 .5em; }
+h1 { font-size: clamp(2.4rem, 6vw, 4.2rem); }
+h2 { font-size: clamp(1.8rem, 4vw, 2.6rem); }
+h3 { font-size: 1.25rem; letter-spacing: -0.02em; }
+p { margin: 0 0 1em; }
+.lede { font-size: clamp(1.05rem, 2vw, 1.3rem); color: var(--muted); max-width: 62ch; }
+
+.eyebrow {
+  font-family: var(--mono);
+  font-size: .78rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--cobalt);
+  font-weight: 600;
+  margin: 0 0 1rem;
+  display: block;
+}
+
+/* --- header --------------------------------------------------------------- */
+
+.site-head {
+  position: sticky; top: 0; z-index: 50;
+  background: rgba(250, 250, 247, .92);
+  backdrop-filter: saturate(140%) blur(10px);
+  border-bottom: 1px solid var(--hairline);
+}
+.site-head .wrap { display: flex; align-items: center; gap: 1rem; height: 68px; }
+.brand { display: flex; align-items: center; gap: .6rem; font-weight: 800; letter-spacing: -.02em; font-size: 1.1rem; color: var(--ink); }
+.brand:hover { text-decoration: none; }
+.brand img { width: 32px; height: 32px; border-radius: 8px; display: block; }
+.nav { margin-left: auto; display: flex; align-items: center; gap: 1.6rem; }
+.nav a { color: var(--ink); font-weight: 600; font-size: .95rem; }
+.nav a:hover { color: var(--cobalt); text-decoration: none; }
+/* `.nav a` is (0,1,1) and `.btn-primary` is (0,1,0), so the plain nav-link
+   colour was winning and painting the "Get the app" button's label ink-black
+   on cobalt. Matched specificity, rather than reaching for !important. */
+.nav a.btn-primary, .nav a.btn-primary:hover { color: #fff; }
+
+/* The Chrome extension button. The mark keeps Google's own four colours — that
+   is what makes it read as "Chrome" at a glance — so the button around it stays
+   quiet: an outline, not a second filled CTA competing with "Get the app". */
+/* Ink, not white. On a paper header (#FAFAF7 at 92%) a white button is
+   invisible — only its hairline border showed. Ink also matches the Google
+   Play and App Store buttons further down the page, and stays clearly distinct
+   from the cobalt "Get the app" beside it, so the two read as two actions
+   rather than one repeated. Google's four colours stay on the mark itself,
+   which is what makes it register as Chrome at a glance. */
+.btn-chrome {
+  display: inline-flex; align-items: center; gap: .5rem;
+  background: var(--ink); color: #fff;
+  border: 1.5px solid var(--ink);
+}
+.nav a.btn-chrome { color: #fff; font-weight: 700; }
+.btn-chrome:hover, .nav a.btn-chrome:hover {
+  background: #23252F; border-color: #23252F; color: #fff; text-decoration: none;
+}
+.chrome-mark { flex: none; display: block; }
+.nav-toggle { display: none; }
+
+@media (max-width: 800px) {
+  .nav { position: fixed; inset: 68px 0 auto 0; background: var(--white);
+    flex-direction: column; align-items: flex-start; gap: 0; padding: .5rem var(--gutter) 1.25rem;
+    border-bottom: 1px solid var(--hairline); transform: translateY(-120%);
+    visibility: hidden;
+    transition: transform .22s ease, visibility .22s; }
+  .nav[data-open="true"] { transform: translateY(0); visibility: visible; }
+  .nav a { padding: .7rem 0; width: 100%; border-bottom: 1px solid var(--hairline); }
+  .nav .btn { margin-top: .75rem; width: 100%; text-align: center; border-bottom: 0; }
+  .nav-toggle { display: inline-flex; margin-left: auto; align-items: center; justify-content: center;
+    width: 42px; height: 42px; border: 1px solid var(--hairline); background: var(--white);
+    border-radius: var(--r-sm); cursor: pointer; }
+  .nav-toggle span { display: block; width: 18px; height: 2px; background: var(--ink); position: relative; }
+  .nav-toggle span::before, .nav-toggle span::after { content: ''; position: absolute; left: 0;
+    width: 18px; height: 2px; background: var(--ink); }
+  .nav-toggle span::before { top: -6px; } .nav-toggle span::after { top: 6px; }
+}
+
+/* --- buttons -------------------------------------------------------------- */
+
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: .5rem;
+  padding: .8rem 1.35rem; border-radius: var(--r-md);
+  font-weight: 700; font-size: .98rem; border: 1.5px solid transparent;
+  cursor: pointer; transition: transform .12s ease, background .12s ease;
+}
+.btn:hover { text-decoration: none; transform: translateY(-1px); }
+.btn-primary { background: var(--cobalt); color: #fff; }
+.btn-primary:hover { background: var(--cobalt-deep); }
+.btn-ghost { background: transparent; color: var(--ink); border-color: var(--hairline); }
+.btn-ghost:hover { border-color: var(--cobalt); color: var(--cobalt); }
+.btn-lg { padding: 1rem 1.6rem; font-size: 1.05rem; }
+
+/* Store buttons — real store badges are trademarked, so these are plain
+   typographic buttons rather than imitations. */
+.stores { display: flex; flex-wrap: wrap; gap: .75rem; }
+.store {
+  display: inline-flex; align-items: center; gap: .7rem;
+  padding: .7rem 1.15rem; border-radius: var(--r-md);
+  background: var(--ink); color: #fff; border: 1.5px solid var(--ink);
+  transition: transform .12s ease;
+}
+.store:hover { text-decoration: none; transform: translateY(-1px); background: var(--ink-soft); }
+.store svg { width: 22px; height: 22px; flex: none; }
+.store b { display: block; font-size: .98rem; font-weight: 700; line-height: 1.15; }
+.store small { display: block; font-size: .7rem; opacity: .72; letter-spacing: .04em; text-transform: uppercase; }
+.store[aria-disabled="true"] { opacity: .55; pointer-events: none; }
+
+/* --- hero ----------------------------------------------------------------- */
+
+.hero { padding: clamp(3rem, 8vw, 6rem) 0 clamp(2.5rem, 6vw, 4.5rem); }
+.hero-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: clamp(2rem, 5vw, 4rem); align-items: center; }
+@media (max-width: 900px) { .hero-grid { grid-template-columns: 1fr; } }
+.hero h1 span { color: var(--cobalt); }
+.hero .stores { margin-top: 1.8rem; }
+.hero-note { font-family: var(--mono); font-size: .8rem; color: var(--muted); margin-top: 1rem; }
+
+/* --- scan frame: the brand's own bracket motif ---------------------------- */
+
+.frame { position: relative; padding: 22px; }
+.frame::before, .frame::after,
+.frame > .frame-b1, .frame > .frame-b2 {
+  content: ''; position: absolute; width: 34px; height: 34px;
+  border: 3px solid var(--cobalt);
+}
+.frame::before { top: 0; left: 0; border-right: 0; border-bottom: 0; border-radius: 10px 0 0 0; }
+.frame::after { top: 0; right: 0; border-left: 0; border-bottom: 0; border-radius: 0 10px 0 0; }
+.frame > .frame-b1 { bottom: 0; left: 0; border-right: 0; border-top: 0; border-radius: 0 0 0 10px; }
+.frame > .frame-b2 { bottom: 0; right: 0; border-left: 0; border-top: 0; border-radius: 0 0 10px 0; }
+
+.checker {
+  background: var(--white); border: 1px solid var(--hairline);
+  border-radius: var(--r-lg); padding: 1.5rem;
+  box-shadow: 0 1px 2px rgba(16,17,26,.06), 0 12px 32px rgba(16,17,26,.06);
+}
+.checker label { display: block; font-weight: 700; font-size: .9rem; margin-bottom: .5rem; }
+.checker-row { display: flex; gap: .5rem; }
+.checker input {
+  flex: 1; min-width: 0; font-family: var(--mono); font-size: .92rem;
+  padding: .8rem .9rem; border: 1.5px solid var(--hairline);
+  border-radius: var(--r-sm); background: var(--paper); color: var(--ink);
+}
+.checker input:focus { border-color: var(--cobalt); }
+.verdict { margin-top: 1.1rem; border-radius: var(--r-md); padding: 1rem 1.1rem; border-left: 5px solid var(--hairline); background: var(--paper); }
+.verdict[data-level="safe"] { border-left-color: var(--safe); }
+.verdict[data-level="caution"] { border-left-color: var(--caution); }
+.verdict[data-level="danger"] { border-left-color: var(--danger); }
+.verdict-head { display: flex; align-items: center; gap: .5rem; font-weight: 800; letter-spacing: -.01em; }
+/* Text tokens are darker than the rule colours: #12996B is 3.47:1 on paper
+   and #E08A1E only 2.57:1, both under the 4.5:1 AA floor for 17px bold. */
+.verdict[data-level="safe"] .verdict-head { color: #0E7B56; }
+.verdict[data-level="caution"] .verdict-head { color: #9A5A0C; }
+.verdict[data-level="danger"] .verdict-head { color: var(--danger); }
+.verdict ul { margin: .6rem 0 0; padding-left: 1.1rem; }
+.verdict li { font-size: .92rem; color: var(--ink); margin-bottom: .3rem; }
+.verdict .none { font-size: .92rem; color: var(--muted); margin: .4rem 0 0; }
+.samples { display: flex; flex-wrap: wrap; gap: .4rem; margin-top: .9rem; }
+.samples button {
+  font-family: var(--mono); font-size: .74rem; padding: .35rem .6rem;
+  border: 1px solid var(--hairline); background: var(--white);
+  border-radius: 999px; cursor: pointer; color: var(--muted);
+}
+.samples button:hover { border-color: var(--cobalt); color: var(--cobalt); }
+
+/* --- sections ------------------------------------------------------------- */
+
+.section { padding: clamp(3rem, 7vw, 5.5rem) 0; }
+.section-alt { background: var(--white); border-top: 1px solid var(--hairline); border-bottom: 1px solid var(--hairline); }
+.section-ink { background: var(--ink); color: var(--paper); }
+.section-ink h2, .section-ink h3 { color: #fff; }
+.section-ink .lede { color: #A7A9B6; }
+.section-ink .eyebrow { color: var(--accent); }
+
+.grid { display: grid; gap: 1.25rem; }
+.grid-3 { grid-template-columns: repeat(3, 1fr); }
+.grid-2 { grid-template-columns: repeat(2, 1fr); }
+@media (max-width: 880px) { .grid-3 { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 620px) { .grid-3, .grid-2 { grid-template-columns: 1fr; } }
+
+.card {
+  background: var(--white); border: 1px solid var(--hairline);
+  border-radius: var(--r-lg); padding: 1.5rem;
+}
+.section-alt .card { background: var(--paper); }
+.section-ink .card { background: var(--ink-soft); border-color: rgba(255,255,255,.08); }
+.card h3 { margin-bottom: .4rem; }
+.card p { margin: 0; color: var(--muted); font-size: .96rem; }
+.section-ink .card p { color: #A7A9B6; }
+.card-icon {
+  width: 42px; height: 42px; border-radius: var(--r-sm);
+  background: rgba(11,92,255,.10); color: var(--cobalt);
+  display: grid; place-items: center; margin-bottom: 1rem;
+}
+.section-ink .card-icon { background: rgba(127,176,255,.14); color: var(--accent); }
+.card-icon svg { width: 21px; height: 21px; }
+
+/* --- checks list ---------------------------------------------------------- */
+
+.checks { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0 2.5rem; margin: 0; padding: 0; list-style: none; }
+@media (max-width: 700px) { .checks { grid-template-columns: 1fr; } }
+.checks li {
+  display: flex; gap: .8rem; align-items: baseline;
+  padding: .8rem 0; border-bottom: 1px solid rgba(255,255,255,.09);
+  font-size: .97rem;
+}
+.checks .num { font-family: var(--mono); font-size: .78rem; color: var(--accent); flex: none; width: 1.6rem; }
+
+/* --- generator ------------------------------------------------------------ */
+
+.gen-grid { display: grid; grid-template-columns: 1fr 380px; gap: 2rem; align-items: start; }
+@media (max-width: 940px) { .gen-grid { grid-template-columns: 1fr; } }
+
+.types { display: flex; flex-wrap: wrap; gap: .45rem; margin-bottom: 1.5rem; }
+.type-btn {
+  padding: .5rem .9rem; border-radius: 999px; border: 1.5px solid var(--hairline);
+  background: var(--white); cursor: pointer; font-size: .88rem; font-weight: 600;
+  font-family: var(--sans); color: var(--ink);
+}
+.type-btn:hover { border-color: var(--cobalt-soft); }
+.type-btn[aria-selected="true"] { background: var(--cobalt); border-color: var(--cobalt); color: #fff; }
+
+.field { margin-bottom: 1rem; }
+.field label { display: block; font-weight: 600; font-size: .88rem; margin-bottom: .4rem; }
+.field input, .field textarea, .field select {
+  width: 100%; padding: .75rem .85rem; font-size: .97rem; font-family: var(--sans);
+  border: 1.5px solid var(--hairline); border-radius: var(--r-sm);
+  background: var(--white); color: var(--ink);
+}
+.field textarea { min-height: 110px; resize: vertical; font-family: var(--mono); font-size: .9rem; }
+.field input:focus, .field textarea:focus, .field select:focus { border-color: var(--cobalt); }
+.field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+@media (max-width: 520px) { .field-row { grid-template-columns: 1fr; } }
+.hint { font-size: .82rem; color: var(--muted); margin: .35rem 0 0; }
+
+.preview {
+  position: sticky; top: 88px;
+  background: var(--white); border: 1px solid var(--hairline);
+  border-radius: var(--r-lg); padding: 1.5rem; text-align: center;
+}
+.preview canvas { width: 100%; max-width: 280px; height: auto; image-rendering: pixelated; border-radius: 8px; }
+.preview-meta { font-family: var(--mono); font-size: .76rem; color: var(--muted); margin-top: .9rem; }
+.preview .btn { width: 100%; margin-top: .6rem; }
+.gen-error { color: var(--danger); font-size: .9rem; margin-top: .8rem; }
+
+.swatches { display: flex; gap: .5rem; align-items: center; justify-content: center; margin-top: 1rem; }
+.swatches input[type="color"] { width: 38px; height: 34px; padding: 0; border: 1px solid var(--hairline); border-radius: 8px; background: none; cursor: pointer; }
+.swatches label { font-size: .8rem; color: var(--muted); }
+
+/* --- misc ----------------------------------------------------------------- */
+
+.faq { border-top: 1px solid var(--hairline); }
+.faq details { border-bottom: 1px solid var(--hairline); padding: 1.1rem 0; }
+.faq summary { font-weight: 700; cursor: pointer; font-size: 1.03rem; list-style: none; display: flex; justify-content: space-between; gap: 1rem; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: '+'; color: var(--cobalt); font-weight: 800; font-size: 1.3rem; line-height: 1; }
+.faq details[open] summary::after { content: '−'; }
+.faq p { margin: .8rem 0 0; color: var(--muted); }
+
+.cta-band { background: var(--cobalt); color: #fff; border-radius: var(--r-xl); padding: clamp(2rem, 5vw, 3.5rem); text-align: center; }
+.cta-band h2 { color: #fff; }
+.cta-band p { color: #fff; max-width: 54ch; margin-left: auto; margin-right: auto; }
+.cta-band .stores { justify-content: center; margin-top: 1.6rem; }
+.cta-band .store { background: #fff; color: var(--ink); border-color: #fff; }
+.cta-band .store:hover { background: var(--paper); }
+
+.site-foot { border-top: 1px solid var(--hairline); padding: 3rem 0 2rem; font-size: .93rem; }
+.foot-grid { display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr 1fr; gap: 2rem; }
+@media (max-width: 760px) { .foot-grid { grid-template-columns: 1fr 1fr; } }
+.site-foot h2 { font-size: .8rem !important; line-height: 1.1; text-transform: uppercase; letter-spacing: .1em; font-family: var(--mono); color: var(--muted); font-weight: 600; }
+.site-foot ul { list-style: none; margin: 0; padding: 0; }
+.site-foot li { margin-bottom: .45rem; }
+.site-foot a { color: var(--ink); }
+.site-foot a:hover { color: var(--cobalt); }
+.foot-legal { margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid var(--hairline); color: var(--muted); display: flex; flex-wrap: wrap; gap: 1rem; justify-content: space-between; }
+
+.prose { max-width: 72ch; }
+.prose h2 { margin-top: 2.5rem; }
+.prose h3 { margin-top: 1.8rem; }
+.prose ul { padding-left: 1.2rem; }
+.prose li { margin-bottom: .5rem; }
+.prose code { font-family: var(--mono); font-size: .88em; background: var(--white); border: 1px solid var(--hairline); padding: .1em .4em; border-radius: 5px; }
+
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+
+/* --- tool pages: sidebar + form + sticky preview -------------------------- */
+
+.tool { padding: 2.5rem 0 3.5rem; }
+.tool-grid {
+  display: grid;
+  grid-template-columns: 210px minmax(0, 1fr) 340px;
+  gap: 2.25rem;
+  align-items: start;
+}
+@media (max-width: 1080px) {
+  .tool-grid { grid-template-columns: 200px minmax(0, 1fr); }
+  .preview { grid-column: 1 / -1; }
+}
+@media (max-width: 780px) {
+  .tool-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+  /* Someone arriving from a search for "wifi qr code generator" met 512px of
+     links to 31 other generators before the one they asked for. Below the
+     breakpoint the tool comes first and the index collapses. */
+  .tool-main { order: 1; }
+  .preview   { order: 2; }
+  .tool-nav  { order: 3; }
+}
+
+.tool-nav { position: sticky; top: 88px; }
+@media (max-width: 780px) { .tool-nav { position: static; } }
+.tool-nav h2 {
+  font-family: var(--mono); font-size: .74rem; letter-spacing: .12em;
+  text-transform: uppercase; color: var(--muted); font-weight: 600; margin-bottom: .75rem;
+}
+.tool-nav ul { list-style: none; margin: 0; padding: 0; max-height: 70vh; overflow-y: auto; }
+@media (max-width: 780px) {
+  .tool-nav ul {
+    max-height: none; display: flex; flex-wrap: wrap; gap: .4rem;
+    margin-top: .8rem;
+  }
+}
+.tool-nav li { margin: 0; }
+.tool-nav a {
+  display: block; padding: .42rem .6rem; border-radius: 8px;
+  color: var(--ink); font-size: .9rem; font-weight: 500;
+  border-left: 2px solid transparent;
+}
+.tool-nav a:hover { background: var(--white); text-decoration: none; color: var(--cobalt); }
+.tool-nav a.active {
+  background: var(--white); color: var(--cobalt); font-weight: 700;
+  border-left-color: var(--cobalt);
+}
+@media (max-width: 780px) {
+  .tool-nav a { border: 1px solid var(--hairline); border-left-width: 1px; border-radius: 999px; }
+  .tool-nav a.active { border-color: var(--cobalt); }
+}
+
+.tool-main h1 {
+  font-size: clamp(1.7rem, 3.4vw, 2.5rem);
+  margin-bottom: .6rem;
+}
+.tool-main .lede { font-size: 1.02rem; margin-bottom: 1.6rem; }
+
+.presets { display: flex; gap: .45rem; justify-content: center; margin: .9rem 0 1.1rem; flex-wrap: wrap; }
+.presets button {
+  width: 30px; height: 30px; border-radius: 50%; cursor: pointer;
+  border: 2px solid var(--hairline); padding: 0;
+  /* 30px visual, 44px target — WCAG 2.5.5 without a chunkier swatch. */
+  outline-offset: 3px; position: relative;
+}
+.presets button::after {
+  content: ''; position: absolute; inset: -7px;
+}
+.presets button[aria-pressed="true"] { border-color: var(--ink); }
+.presets button:hover { transform: scale(1.1); }
+
+.logo-row { display: flex; gap: .5rem; align-items: center; justify-content: center; margin-bottom: .8rem; }
+/* Visually hidden, not display:none — the latter removes it from the tab
+   order entirely, so "Add a centre logo" was mouse-only (WCAG 2.1.1). */
+.logo-row input[type="file"] {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+}
+.logo-row input[type="file"]:focus-visible + label {
+  outline: 3px solid var(--cobalt); outline-offset: 3px;
+}
+.logo-row label, .logo-row button {
+  font-size: .82rem; padding: .45rem .8rem; border-radius: 999px;
+  border: 1px solid var(--hairline); background: var(--white); cursor: pointer;
+  font-family: var(--sans); color: var(--ink); font-weight: 600;
+}
+.logo-row label:hover, .logo-row button:hover { border-color: var(--cobalt); color: var(--cobalt); }
+
+/* --- homepage type grid --------------------------------------------------- */
+
+.type-cards {
+  display: grid; gap: .6rem; margin-top: 2rem;
+  grid-template-columns: repeat(auto-fill, minmax(165px, 1fr));
+}
+.type-card {
+  display: block; padding: .85rem 1rem; background: var(--paper);
+  border: 1px solid var(--hairline); border-radius: var(--r-sm);
+  color: var(--ink); font-weight: 600; font-size: .93rem;
+  transition: border-color .12s ease, transform .12s ease;
+}
+.type-card:hover {
+  text-decoration: none; border-color: var(--cobalt);
+  color: var(--cobalt); transform: translateY(-1px);
+}
+
+/* --- guides --------------------------------------------------------------- */
+
+.crumbs { font-size: .84rem; color: var(--muted); margin-bottom: 1rem; }
+.crumbs a { color: var(--muted); }
+.crumbs a:hover { color: var(--cobalt); }
+
+/* The direct answer Google lifts for a featured snippet. Visually set apart
+   so a human reading the page gets the same 40-word summary a searcher does. */
+.answer {
+  font-size: 1.14rem; line-height: 1.55; font-weight: 500;
+  border-left: 4px solid var(--cobalt); padding: .2rem 0 .2rem 1.1rem;
+  margin: 0 0 2rem; color: var(--ink);
+}
+
+
+/* --- guide cards ---------------------------------------------------------- */
+
+.guide-cards {
+  display: grid; gap: 1rem; margin-top: 2rem;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+}
+.guide-card {
+  display: block; padding: 1.4rem; background: var(--white);
+  border: 1px solid var(--hairline); border-radius: var(--r-lg);
+  color: var(--ink); transition: border-color .12s ease, transform .12s ease;
+}
+.guide-card:hover {
+  text-decoration: none; border-color: var(--cobalt); transform: translateY(-2px);
+}
+.guide-card h3 { margin-bottom: .5rem; font-size: 1.08rem; }
+.guide-card p { margin: 0; color: var(--muted); font-size: .93rem; }
+@media (max-width: 900px) { .foot-grid { grid-template-columns: 1fr 1fr; } }
+
+/* --- guide table of contents and tables ----------------------------------- */
+
+.toc {
+  background: var(--white); border: 1px solid var(--hairline);
+  border-radius: var(--r-md); padding: 1.2rem 1.4rem; margin: 0 0 2.5rem;
+}
+.toc h2 {
+  font-family: var(--mono); font-size: .74rem; letter-spacing: .12em;
+  text-transform: uppercase; color: var(--muted); font-weight: 600;
+  margin: 0 0 .7rem;
+}
+.toc ol { margin: 0; padding-left: 1.2rem; }
+.toc li { margin-bottom: .35rem; font-size: .95rem; }
+
+.prose table {
+  width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: .95rem;
+  display: block; overflow-x: auto;
+}
+.prose th, .prose td {
+  text-align: left; padding: .7rem .9rem; border-bottom: 1px solid var(--hairline);
+  vertical-align: top;
+}
+.prose th {
+  font-weight: 700; font-size: .82rem; text-transform: uppercase;
+  letter-spacing: .05em; color: var(--muted); font-family: var(--mono);
+  white-space: nowrap;
+}
+.prose tbody tr:last-child td { border-bottom: 0; }
+.prose h2 { scroll-margin-top: 88px; }
+
+/* --- bulk generation ------------------------------------------------------ */
+
+.bulk-grid {
+  display: grid; gap: 1rem; margin-top: 1.2rem;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+}
+.bulk-cell {
+  background: var(--white); border: 1px solid var(--hairline);
+  border-radius: var(--r-md); padding: .9rem; text-align: center;
+}
+.bulk-cell canvas { width: 100%; height: auto; border-radius: 6px; }
+.bulk-label {
+  font-family: var(--mono); font-size: .72rem; color: var(--muted);
+  margin: .5rem 0 .6rem; word-break: break-all; line-height: 1.35;
+}
+.bulk-cell .btn { width: 100%; padding: .45rem .6rem; font-size: .82rem; }
+
+
+/* Skip link — 39 Tab presses to reach the first field without it. */
+.skip {
+  position: absolute; left: -9999px; top: 0; z-index: 100;
+  background: var(--cobalt); color: #fff; padding: .8rem 1.2rem;
+  border-radius: 0 0 var(--r-sm) 0; font-weight: 700;
+}
+.skip:focus { left: 0; text-decoration: none; }
+
+.tool-nav-label {
+  font-family: var(--mono); font-size: .74rem; letter-spacing: .12em;
+  text-transform: uppercase; color: var(--muted); font-weight: 600;
+  margin: 0 0 .75rem;
+}
+
+
+/* The type index is a <details> on mobile and always-open above it. */
+.tool-nav > summary {
+  display: none; cursor: pointer; font-weight: 700; font-size: .95rem;
+  padding: .8rem 1rem; background: var(--white);
+  border: 1px solid var(--hairline); border-radius: var(--r-sm);
+  list-style: none;
+}
+.tool-nav > summary::-webkit-details-marker { display: none; }
+.tool-nav > summary::after { content: '+'; float: right; color: var(--cobalt); font-weight: 800; }
+.tool-nav[open] > summary::after { content: '\2212'; }
+@media (max-width: 780px) {
+  .tool-nav > summary { display: block; }
+  .tool-nav > .tool-nav-label { display: none; }
+}
+
+/* --- store badges --------------------------------------------------------- */
+
+/* Both sit on black, which is the convention for both stores' official
+   badges. The difference is the mark: Google Play keeps its four brand
+   colours, Apple's is monochrome white by Apple's own guideline. */
+.store-play svg path { /* colours are set inline, per Play brand */ }
+.store-apple svg { color: #fff; }
+
+/* Inside the cobalt CTA band the badges invert to a white field, so the
+   Apple mark has to flip to ink or it disappears. */
+.cta-band .store-apple svg { color: var(--ink); }
